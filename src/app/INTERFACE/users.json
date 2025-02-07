@@ -1,0 +1,39 @@
+{
+  "users": {
+    "user1": {
+      "userName": "Givi_Khaduri",
+      "email": "givi@example.com",
+      "password": "password123",
+      "isAdmin": true,
+      "registrationDate": "2024-02-05T12:00:00Z"
+    },
+    "user2": {
+      "userName": "jane_smith",
+      "email": "jane.smith@example.com",
+      "password": "securePass456",
+      "isAdmin": true,
+      "registrationDate": "2024-01-15T08:30:00Z"
+    },
+    "user3": {
+      "userName": "mike_johnson",
+      "email": "mike.johnson@example.com",
+      "password": "mikePass789",
+      "isAdmin": false,
+      "registrationDate": "2023-12-20T16:45:00Z"
+    },
+    "user4": {
+      "userName": "alice_wonder",
+      "email": "alice.wonder@example.com",
+      "password": "aliceSecret321",
+      "isAdmin": false,
+      "registrationDate": "2024-02-01T10:10:00Z"
+    },
+    "user5": {
+      "userName": "admin_user",
+      "email": "admin@example.com",
+      "password": "superAdmin999",
+      "isAdmin": true,
+      "registrationDate": "2023-11-11T07:20:00Z"
+    }
+  }
+}
