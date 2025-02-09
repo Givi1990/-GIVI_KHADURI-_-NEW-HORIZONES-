@@ -12,41 +12,41 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductDetailsComponent implements OnInit {
   
-  productDetails: any = {};  // Для хранения данных продукта
+  productDetails: any = {}; 
   productId!: number;
 
   constructor(
     private router: Router, 
     private route: ActivatedRoute,
-    private contentService: ContentService  // Сервис для получения данных о продукте
+    private contentService: ContentService  
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.productId = +params['id'];  // Получаем ID из параметров маршрута
-      this.getProductDetailsData();    // Загружаем данные о продукте
+      this.productId = +params['id'];  
+      this.getProductDetailsData();    
     });
   }
 
-  // Метод для получения данных о продукте с API
+ 
   getProductDetailsData() {
     this.contentService.getProductById(this.productId).subscribe(
       (product) => {
-        this.productDetails = product;  // Устанавливаем данные продукта
+        this.productDetails = product;  
         console.log('Product Details:', this.productDetails);
       },
       (error) => {
-        console.error('Error fetching product:', error);  // Обработка ошибок
+        console.error('Error fetching product:', error);  
       }
     );
   }
 
-  // Добавление товара в корзину
+
   addToCart(product: any) {
     console.log('Product added to cart:', product);
   }
   
-  // Возврат на предыдущую страницу
+
   goBack() {
     this.router.navigate(['/']);  // Навигация на главную страницу
   }
