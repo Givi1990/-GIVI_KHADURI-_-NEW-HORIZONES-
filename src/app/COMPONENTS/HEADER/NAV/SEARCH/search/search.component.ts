@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit {
       this.router.navigate(['/product', productId], { state: { product: product } });
 
       this.searchTerm = '';  
-      setTimeout(() => window.location.reload(), 200);
+      
     }
   }
 

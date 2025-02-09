@@ -16,5 +16,8 @@ export class ContentService {
     return this.http.get<any>(this.apiUrlProducts);
   }
 
+  getProductById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrlProducts}/${id}`);
+  }
   
 }
