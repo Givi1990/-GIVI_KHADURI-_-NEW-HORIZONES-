@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8 position-relative">
+        <div class="input-group">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Enter product name"
+            [(ngModel)]="searchTerm" 
+            (input)="onSearch()">
+        </div>
+  
+        <ul 
+          *ngIf="searchTerm && filteredProducts.length" 
+          class="list-group position-absolute w-100" 
+          style="z-index: 1000;">
+          <li class="list-group-item" *ngFor="let product of filteredProducts">
+            <a (click)="navigateToProductDetails(product.id)" class="text-decoration-none d-block">
+              {{ product.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
