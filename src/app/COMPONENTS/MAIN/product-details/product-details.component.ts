@@ -48,6 +48,6 @@ export class ProductDetailsComponent implements OnInit {
   
 
   goBack() {
-    this.router.navigate(['/']);  // Навигация на главную страницу
+    this.router.navigate(['/']);  
   }
 }
