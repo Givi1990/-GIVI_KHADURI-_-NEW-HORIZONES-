@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
     this.contentService.getProduct().subscribe(
       (data: any[]) => {
         this.products = data;
-        this.filteredProducts = data;  // Initially, show all products
+        this.filteredProducts = data;  
         console.log('Fetched products:', data);
       },
       (error: any) => {
