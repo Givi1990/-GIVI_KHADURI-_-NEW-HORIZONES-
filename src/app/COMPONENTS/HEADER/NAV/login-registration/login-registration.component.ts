@@ -51,7 +51,7 @@ export class LoginRegistrationComponent {
     const { userName, password, confirmPassword, userEmail } = this.authForm.value;
   
     if (this.isLoginMode) {
-      // Вход
+      // login
       const loginData: UserLogin = { userName, password };
       this.userService.loginUser(loginData).subscribe(
         (user) => {
@@ -68,7 +68,7 @@ export class LoginRegistrationComponent {
         (error) => console.error("Login failed", error)
       );
     } else {
-      // Регистрация
+      // registration
       if (password !== confirmPassword) {
         alert("Passwords do not match!");
         return;
