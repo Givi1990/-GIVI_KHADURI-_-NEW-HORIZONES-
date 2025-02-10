@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Router } from '@angular/router';  // Ensure Router is imported
+import { RouterModule, Router } from '@angular/router'; 
 import { ContentService } from '../../../../../SERVICES/MAIN CONTENT/content.service';
 
 @Component({
