@@ -37,7 +37,7 @@ export class LoginRegistrationComponent {
     
     if (this.isLoginMode) {
       this.authForm.removeControl('confirmPassword');
-      this.authForm.removeControl('userEmail'); // Удаляем поле email при входе
+      this.authForm.removeControl('userEmail');
     } else {
       this.authForm.addControl('confirmPassword', this.fb.control('', Validators.required));
       this.authForm.addControl('userEmail', this.fb.control('', [Validators.required, Validators.email])); 
