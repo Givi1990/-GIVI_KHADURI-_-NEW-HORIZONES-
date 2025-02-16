@@ -37,11 +37,8 @@ export class LoginRegistrationComponent {
     
     if (this.isLoginMode) {
       this.authForm.removeControl('confirmPassword');
-<<<<<<< HEAD
-      this.authForm.removeControl('userEmail', 'userEmail'); 
-=======
-      
->>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
+      this.authForm.removeControl('userEmail'); 
+
     } else {
       this.authForm.addControl('confirmPassword', this.fb.control('', Validators.required));
       this.authForm.addControl('userEmail', this.fb.control('', [Validators.required, Validators.email])); 

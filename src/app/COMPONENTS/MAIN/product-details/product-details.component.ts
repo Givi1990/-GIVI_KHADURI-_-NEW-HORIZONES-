@@ -13,20 +13,13 @@ import { CartStateService } from '../../../SERVICES/SIGNAL-SERVICES/cart-state.s
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-<<<<<<< HEAD
   productDetails: any = {};  
-=======
-  
-  productDetails: any = {}; 
->>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
   productId!: number;
   userId!: number;
-  successMessage: string = '';
 
   constructor(
     private router: Router, 
     private route: ActivatedRoute,
-<<<<<<< HEAD
     private contentService: ContentService,
     private userCartService: UserCartService,
     private cartState: CartStateService
@@ -41,23 +34,6 @@ export class ProductDetailsComponent implements OnInit {
     this.contentService.getProductById(this.productId).subscribe(
       (product) => {
         this.productDetails = product; 
-=======
-    private contentService: ContentService  
-  ) {}
-
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.productId = +params['id'];  
-      this.getProductDetailsData();    
-    });
-  }
-
- 
-  getProductDetailsData() {
-    this.contentService.getProductById(this.productId).subscribe(
-      (product) => {
-        this.productDetails = product;  
->>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
         console.log('Product Details:', this.productDetails);
       },
       (error) => {
@@ -66,7 +42,6 @@ export class ProductDetailsComponent implements OnInit {
     );
   }
 
-<<<<<<< HEAD
   getParams() {
     this.route.params.subscribe(params => {
       this.productId = +params['id'];  
@@ -84,8 +59,6 @@ export class ProductDetailsComponent implements OnInit {
       console.error('No user info found in session storage.');
     }
   }
-=======
->>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
 
   addToCart(product: any) {
     if (!this.userId) {
@@ -93,28 +66,23 @@ export class ProductDetailsComponent implements OnInit {
       return;
     }
   
+    // Добавляем quantity:1 и userId в объект товара
     const productWithUserId = { ...product, userId: this.userId, quantity: 1 };
   
+    // Отправляем запрос на добавление товара в удалённую базу
     this.userCartService.createProduct(productWithUserId).subscribe(
       (response) => {
         console.log('Product added to cart:', response);
+        // После успешного добавления обновляем локальное состояние корзины через сигнал
         this.cartState.addItem(productWithUserId);
-        this.successMessage = 'Product successfully added to cart!';  // Success message
       },
       (error) => {
         console.error('Error adding product to cart:', error);
-        this.successMessage = 'Error adding product to cart. Please try again.';  // Error message
       }
     );
   }
   
-<<<<<<< HEAD
   goBack() {
     this.router.navigate(['/']); 
-=======
-
-  goBack() {
-    this.router.navigate(['/']);  
->>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
   }
 }
