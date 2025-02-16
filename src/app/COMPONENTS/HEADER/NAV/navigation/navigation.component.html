@@ -1,19 +1,21 @@
-<nav class="navbar navbar-expand-lg  ">
-    <a class="navbar-brand" href="#">GITA Project</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown" >
-      <ul class="navbar-nav  ">
-        <li class="nav-item" *ngIf="!isLogin">
-          <button class="btn btn-light" (click)="navigateToSignUp()" >Sing in</button>
-        </li>
-        <li class="nav-item" *ngIf="isLogin">
-          <button class="btn btn-light"  (click)="navigateToUserPage()" >User Page</button>
-        </li>
-        <li class="nav-item" *ngIf="isLogin">
-          <button class="btn btn-light" (click)="logout()" >Logout</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg d-flex justify-content-between" style="width: 90%; margin: 0 auto;">
+  <!-- Логотип слева -->
+  <img class="navbar-brand" (click)="navigateToMainPage()" src="page-icon-new-horizons.svg" style="width: 150px;">
+  
+  <!-- Кнопки справа -->
+  <div id="navbarNavDropdown">
+    <ul class="navbar-nav d-flex align-items-center">
+      <li class="nav-item" *ngIf="!isLogin">
+        <button class="btn btn-light" (click)="navigateToSignUp()">Sign in</button>
+      </li>
+      <li class="nav-item" *ngIf="isLogin">
+        <button class="btn btn-light" (click)="navigateToUserPage()">
+          <span><i class="fa-regular fa-user"></i></span>
+        </button>
+      </li>
+      <li class="nav-item" *ngIf="isLogin">
+        <button class="btn btn-light" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

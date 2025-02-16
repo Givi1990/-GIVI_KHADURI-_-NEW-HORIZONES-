@@ -42,7 +42,10 @@ export class NavigationComponent implements OnInit, OnChanges {
       alert("Please Sing Up firth!");
       this.router.navigate(['/signup']); 
     }
-    
+  }
+
+  navigateToMainPage(){
+    this.router.navigate(['/']);
   }
 
 

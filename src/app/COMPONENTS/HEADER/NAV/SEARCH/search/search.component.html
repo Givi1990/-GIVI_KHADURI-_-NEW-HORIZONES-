@@ -1,26 +1,31 @@
 <div class="container mt-4">
-    <div class="row justify-content-center">
-      <div class="col-md-8 position-relative">
-        <div class="input-group">
-          <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Enter product name"
-            [(ngModel)]="searchTerm" 
-            (input)="onSearch()">
-        </div>
-  
-        <ul 
-          *ngIf="searchTerm && filteredProducts.length" 
-          class="list-group position-absolute w-100" 
-          style="z-index: 1000;">
-          <li class="list-group-item" *ngFor="let product of filteredProducts">
-            <a (click)="navigateToProductDetails(product.id)" class="text-decoration-none d-block">
-              {{ product.title }}
-            </a>
-          </li>
-        </ul>
+  <div class="row align-items-center" style="padding-left: 1%;">
+    <!-- Столбец для строки поиска -->
+    <div class="col-md-8 position-relative">
+      <div class="input-group">
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Enter product name"
+          [(ngModel)]="searchTerm" 
+          (input)="onSearch()">
       </div>
+      <ul 
+        *ngIf="searchTerm && filteredProducts.length" 
+        class="list-group position-absolute w-100" 
+        style="z-index: 1000;">
+        <li class="list-group-item" *ngFor="let product of filteredProducts">
+          <a (click)="navigateToProductDetails(product.id)" class="text-decoration-none d-block">
+            {{ product.title }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <p class="mb-0 text-center">
+        <i class="fa-solid fa-cart-shopping" style="font-size: 2rem;"></i> 
+        <strong><span style="color: red; font-size: 2rem;">  {{ cartItems }}</span></strong>
+      </p>
     </div>
   </div>
-  
+</div>

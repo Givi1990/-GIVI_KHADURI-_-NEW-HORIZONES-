@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './login-registration.component.scss' 
 })
 export class LoginRegistrationComponent {
-  isLoginMode: boolean = true; 
+  isLoginMode: boolean = false; 
   authForm: FormGroup;
 
   constructor(
@@ -37,7 +37,7 @@ export class LoginRegistrationComponent {
     
     if (this.isLoginMode) {
       this.authForm.removeControl('confirmPassword');
-      this.authForm.removeControl('userEmail'); // Удаляем поле email при входе
+      this.authForm.removeControl('userEmail'); 
     } else {
       this.authForm.addControl('confirmPassword', this.fb.control('', Validators.required));
       this.authForm.addControl('userEmail', this.fb.control('', [Validators.required, Validators.email])); 
@@ -118,7 +118,7 @@ export class LoginRegistrationComponent {
           sessionStorage.setItem('user', JSON.stringify(user)); 
           sessionStorage.setItem('isLogin', JSON.stringify(true));
           this.router.navigate(['/']);
-          setTimeout(() => window.location.reload(), 200);
+          // setTimeout(() => window.location.reload(), 200);
         } else {
           alert("Auto-login failed!");
         }
