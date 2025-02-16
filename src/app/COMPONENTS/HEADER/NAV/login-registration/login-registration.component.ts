@@ -37,7 +37,11 @@ export class LoginRegistrationComponent {
     
     if (this.isLoginMode) {
       this.authForm.removeControl('confirmPassword');
+<<<<<<< HEAD
       this.authForm.removeControl('userEmail'); 
+=======
+      this.authForm.removeControl('userEmail');
+>>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
     } else {
       this.authForm.addControl('confirmPassword', this.fb.control('', Validators.required));
       this.authForm.addControl('userEmail', this.fb.control('', [Validators.required, Validators.email])); 
@@ -51,7 +55,7 @@ export class LoginRegistrationComponent {
     const { userName, password, confirmPassword, userEmail } = this.authForm.value;
   
     if (this.isLoginMode) {
-      // Вход
+      // login
       const loginData: UserLogin = { userName, password };
       this.userService.loginUser(loginData).subscribe(
         (user) => {
@@ -68,7 +72,7 @@ export class LoginRegistrationComponent {
         (error) => console.error("Login failed", error)
       );
     } else {
-      // Регистрация
+      // registration
       if (password !== confirmPassword) {
         alert("Passwords do not match!");
         return;

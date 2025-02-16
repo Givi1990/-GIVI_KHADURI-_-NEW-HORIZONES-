@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { RouterModule, Router } from '@angular/router';
+=======
+import { RouterModule, Router } from '@angular/router'; 
+>>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
 import { ContentService } from '../../../../../SERVICES/MAIN CONTENT/content.service';
 import { CartStateService } from '../../../../../SERVICES/SIGNAL-SERVICES/cart-state.service';
 
@@ -44,7 +48,12 @@ export class SearchComponent implements OnInit {
     this.contentService.getProduct().subscribe(
       (data: any[]) => {
         this.products = data;
+<<<<<<< HEAD
         this.filteredProducts = data;  // Изначально показываем все товары
+=======
+        this.filteredProducts = data;  
+        console.log('Fetched products:', data);
+>>>>>>> c4d982e97cf7668da421c176dfecd0d6cb292157
       },
       (error: any) => {
         console.error('Error fetching products:', error);
