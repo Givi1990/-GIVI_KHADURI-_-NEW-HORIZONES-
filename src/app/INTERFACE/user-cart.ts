@@ -1,5 +1,5 @@
 export interface CartItem {
-  id: string;  // Firebase key as string
+  id: string;  
   title: string;
   description: string;
   price: number;
@@ -10,8 +10,8 @@ export interface CartItem {
 
   
   export interface UserCart {
-    userId: number;       // User ID
-    items: CartItem[];    // List of items in the cart
-    totalPrice: number;   // Total price of all items in the cart
+    userId: number;     
+    items: CartItem[];    
+    totalPrice: number;   
   }
   

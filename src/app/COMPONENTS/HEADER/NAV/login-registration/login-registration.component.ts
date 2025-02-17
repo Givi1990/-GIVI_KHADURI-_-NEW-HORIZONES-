@@ -119,7 +119,7 @@ export class LoginRegistrationComponent {
           sessionStorage.setItem('user', JSON.stringify(user)); 
           sessionStorage.setItem('isLogin', JSON.stringify(true));
           this.router.navigate(['/']);
-          // setTimeout(() => window.location.reload(), 200);
+          setTimeout(() => window.location.reload(), 200);
         } else {
           alert("Auto-login failed!");
         }

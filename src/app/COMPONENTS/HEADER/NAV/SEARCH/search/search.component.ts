@@ -27,7 +27,6 @@ export class SearchComponent implements OnInit {
     this.fetchProducts();
   }
 
-  // Геттер для отображения количества товаров в корзине
   get cartItems(): number {
     return this.cartStateService.cartCount();
   }
@@ -44,7 +43,7 @@ export class SearchComponent implements OnInit {
     this.contentService.getProduct().subscribe(
       (data: any[]) => {
         this.products = data;
-        this.filteredProducts = data;  // Изначально показываем все товары
+        this.filteredProducts = data;  
       },
       (error: any) => {
         console.error('Error fetching products:', error);

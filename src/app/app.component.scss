@@ -1,20 +1,18 @@
-/* Для навигации */
 app-navigation {
     position: fixed;
-    top: 0;  /* Закрепляем компонент к верхней части экрана */
+    top: 0;  
     left: 10%;
-    width: 80%; /* Можно настроить ширину */
-    z-index: 1000; /* Убедитесь, что компонент будет поверх других */
-    background-color: white; /* Пример фона для визуализации */
+    width: 80%; 
+    z-index: 1000; 
+    background-color: white; 
   }
   
-  /* Для поиска */
   app-search {
     position: fixed;
-    top: 50px; /* Под навигацией */
+    top: 50px; 
     left: 0;
     width: 100%;
-    z-index: 999; /* Или выше/ниже, в зависимости от предпочтений */
+    z-index: 999; 
     background-color: white;
   }
 

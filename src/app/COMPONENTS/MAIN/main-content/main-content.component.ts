@@ -71,14 +71,11 @@ export class MainContentComponent implements OnInit {
       return;
     }
 
-    // Добавляем quantity:1 и userId в объект товара
     const productWithUserId = { ...product, userId: this.userId, quantity: 1 };
 
-    // Отправляем запрос на добавление товара в удалённую базу
     this.userCartService.createProduct(productWithUserId).subscribe(
       (response) => {
         console.log('Product added to cart:', response);
-        // После успешного добавления обновляем локальное состояние корзины через сигнал
         this.cartState.addItem(productWithUserId);
       },
       (error) => {
