@@ -1,8 +1,8 @@
 app-navigation {
     position: fixed;
     top: 0;  
-    left: 10%;
-    width: 80%; 
+    left: 5%;
+    width: 90%; 
     z-index: 1000; 
     background-color: white; 
   }
@@ -10,8 +10,8 @@ app-navigation {
   app-search {
     position: fixed;
     top: 50px; 
-    left: 0;
-    width: 100%;
+    left: 5%;
+    width: 90%;
     z-index: 999; 
     background-color: white;
   }
