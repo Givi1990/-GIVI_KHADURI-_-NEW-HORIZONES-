@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-11">
+      <div class="position-relative">
+        <div class="input-group shadow-sm rounded">
+          <span class="input-group-text bg-white border-0">
+            <i class="fa-solid fa-magnifying-glass text-muted"></i>
+          </span>
+          <input 
+            type="text" 
+            class="form-control border-0 shadow-none w-90" 
+            placeholder="Search for products..." 
+            [(ngModel)]="searchTerm" 
+            (input)="onSearch()">
+        </div>
+
+        <ul 
+          *ngIf="searchTerm && filteredProducts.length" 
+          class="list-group position-absolute w-100 bg-white shadow rounded mt-1 overflow-hidden" 
+          style="z-index: 1000; max-height: 250px; overflow-y: auto;">
+          <li class="list-group-item border-0" *ngFor="let product of filteredProducts">
+            <a (click)="navigateToProductDetails(product.id)" class="text-decoration-none d-block text-dark">
+              {{ product.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-1 text-center">
+      <p class="mb-0">
+        <i class="fa-solid fa-cart-shopping" style="font-size: 2rem;"></i> 
+        <strong><span class="text-danger" style="font-size: 2rem;">{{ cartItems }}</span></strong>
+      </p>
+    </div>
+  </div>
+</div>

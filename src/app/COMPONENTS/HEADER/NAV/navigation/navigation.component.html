@@ -1,0 +1,19 @@
+<nav class="navbar  d-flex justify-content-between " style=" margin: 0 auto;">
+  <img class="navbar-brand" (click)="navigateToMainPage()" src="page-icon-new-horizons.svg" style="width: 150px;">
+  
+  <div id="navbarNavDropdown">
+    <ul class="navbar-nav d-flex align-items-center">
+      <li class="nav-item" *ngIf="!isLogin">
+        <button class="btn btn-light" (click)="navigateToSignUp()">Sign in</button>
+      </li>
+      <li class="nav-item" *ngIf="isLogin">
+        <button class="btn btn-light" (click)="navigateToUserPage()">
+          <span><i class="fa-regular fa-user"></i></span>
+        </button>
+      </li>
+      <li class="nav-item" *ngIf="isLogin">
+        <button class="btn btn-light" (click)="logout()">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
